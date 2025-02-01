@@ -40,3 +40,15 @@
     git commit -m "readme updated"
     git push
 ```
+
+### Set main as Default for Future Repos:
+
+```bash
+    git config --global init.defaultBranch main
+
+    git branch -m master main  # Rename branch locally
+    git push -u origin main    # Push the renamed branch to GitHub
+    git remote set-head origin -a  # Set the remote default branch to main
+
+```
+
