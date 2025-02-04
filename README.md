@@ -52,6 +52,7 @@
     git push -u origin main    # Push the renamed branch to GitHub
     git remote set-head origin -a  # Set the remote default branch to main
 
+```
 ```bash
     git remote add origin git@github.com:kishore-2/github-examples.git
     git push -u origin main 
