@@ -1,17 +1,19 @@
+# git notes:
+
 ### creating a file
 
 ```bash
     mkdir github-certifications-example
 ```
 
-### generating the ssh keys:
+### generating the ssh keys
 
 ```bash
     ssh-keygen -t ed25519
     ssh -T git@github.com
 ```
 
-### installing the github cli (gh):
+### installing the github cli (gh)
 
 ```bash
     winget install --id GitHub.cli
@@ -24,7 +26,7 @@
 
 ```
 
-#### It asks:
+#### It asks
 
 1. GitHub.com or Enterprise? → Choose GitHub.com
 2️. HTTPS or SSH? → Choose SSH (if you’ve set up SSH keys)
@@ -32,7 +34,7 @@
 4️. Copy the one-time code & paste it into GitHub
 5️. Done! You're now authenticated.
 
-## update the readme.md file:
+## update the readme.md file
 
 ```bash
     git init
@@ -50,5 +52,16 @@
     git push -u origin main    # Push the renamed branch to GitHub
     git remote set-head origin -a  # Set the remote default branch to main
 
+```bash
+    git remote add origin git@github.com:kishore-2/github-examples.git
+    git push -u origin main 
 ```
 
+### if the default branch is master then
+
+```bash
+    git config --global init.defaultBranch main  # Set main as Default for Future Repos
+    git branch -m master main  # Rename branch locally
+    git push -u origin main    # Push the renamed branch to GitHub
+    git remote set-head origin -a  # Set the remote default branch to main
+```
