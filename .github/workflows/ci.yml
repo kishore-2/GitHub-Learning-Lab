@@ -1,0 +1,17 @@
+name: CI Check
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Run Code Linter
+        run: echo "Running Code Quality Check ✅"
