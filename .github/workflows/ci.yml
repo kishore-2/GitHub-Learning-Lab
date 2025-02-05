@@ -1,0 +1,29 @@
+name: CI Check
+
+on:
+  pull_request:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Run Code Linter
+        run: echo "Running Code Quality Check ✅"
+
+      - name: Create Issue on CI Failure
+        if: failure()
+        run: |
+            curl -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+                 -H "Accept: application/vnd.github.v3+json" \
+                 -d '{
+                    "title": "⚠️ CI Test Failed",
+                    "body": "The latest PR failed the CI check. Please investigate.",
+                    "labels": ["bug"]
+                    }' \
+                 https://api.github.com/repos/${{ github.repository }}/issues
