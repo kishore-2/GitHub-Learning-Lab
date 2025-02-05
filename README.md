@@ -29,7 +29,7 @@
 #### It asks
 
 1. GitHub.com or Enterprise? → Choose GitHub.com
-2. HTTPS or SSH? → Choose SSH (if you’ve set up SSH keys)
+2. HTTPS or SSH? → Choose SSH (if you have set up SSH keys)
 3. Login via Browser or PAT? → Choose Browser
 4. Copy the one-time code & paste it into GitHub
 5. Done! You're now authenticated.
